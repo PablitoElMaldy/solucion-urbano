@@ -37,7 +37,6 @@ namespace solucion_urbano.Controllers
             }
         }
 
-        // GET: api/Proveedor
         [HttpGet]
         public IEnumerable<Proveedor> GetProveedor(int cs = 0, int top=100, string query = "")
         {
