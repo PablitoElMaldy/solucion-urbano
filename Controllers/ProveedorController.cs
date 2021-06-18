@@ -15,12 +15,13 @@ namespace solucion_urbano.Controllers
     {
         private readonly ProveedorContext _context;
         static bool leido = false;
+
         void  CargaDatos(){
-            string[] lines = System.IO.File.ReadAllLines(@"db\palabras.txt");
+            string[] lineas = System.IO.File.ReadAllLines(@"db\palabras.txt");
             int contador = 1;
-            foreach (string line in lines)
+            foreach (string linea in lineas)
             {
-                var reg = new Proveedor(contador,line);
+                var reg = new Proveedor(contador,linea);
                 contador++;
                 _context.Proveedor.Add(reg);
             }
@@ -32,8 +33,6 @@ namespace solucion_urbano.Controllers
             if(leido==false){
                 CargaDatos();
                 leido= true;
-            }else{
-
             }
         }
 
